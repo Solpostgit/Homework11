@@ -22,10 +22,24 @@ public class Main {
             System.out.println("Используйте телефон с iOS или Android");
     }
 
+    public static int deliveryCard(int deliveryDistance) {
+        int deliveryTime = 1;
+        if (deliveryDistance < 20) {
+            System.out.printf("Потребуется дней: %d \n", deliveryTime);
+        } else if ((deliveryDistance >= 20) && (deliveryDistance < 60)) {
+            deliveryTime = deliveryTime + 1;
+            System.out.printf("Потребуется дней: %d \n", deliveryTime);
+        } else if ((deliveryDistance >= 60) && (deliveryDistance < 100)) {
+            deliveryTime = deliveryTime + 2;
+            System.out.printf("Потребуется дней: %d \n", deliveryTime);
+        } else System.out.println("Доставки нет");
+        return (deliveryTime);
+    }
+
     public static void main(String[] args) {
         task1();
-        task2();/*
-        task3();*/
+        task2();
+        task3();
     }
 
     public static void task1() {
@@ -36,5 +50,10 @@ public class Main {
     public static void task2() {
         System.out.println("Task 2");
         changeOS(1, 2023);
+    }
+
+    public static void task3() {
+        System.out.println("Task 3");
+        deliveryCard(95);
     }
 }
