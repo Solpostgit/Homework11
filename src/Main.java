@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Main {
     public static int countsLeapYear(int year) {
         Boolean leapYear = (year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0); // определяем високосный год, как
@@ -10,12 +12,13 @@ public class Main {
     }
 
     public static void changeOS(int clientOS, int clientDeviceYear) {
+        int currentYear = LocalDate.now().getYear();
         if (clientOS == 0) {
-            if (clientDeviceYear < 2015) {
+            if (clientDeviceYear < currentYear) {
                 System.out.println("Установите облегченную версию приложения для iOS по ссылке");
             } else System.out.println("Установите версию приложения для iOS по ссылке");
         } else if (clientOS == 1) {
-            if (clientDeviceYear < 2015) {
+            if (clientDeviceYear < currentYear) {
                 System.out.println("Установите облегченную версию приложения для Android по ссылке");
             } else System.out.println("Установите версию приложения для Android по ссылке");
         } else
@@ -49,7 +52,7 @@ public class Main {
 
     public static void task2() {
         System.out.println("Task 2");
-        changeOS(1, 2023);
+        changeOS(0, 2023);
     }
 
     public static void task3() {
